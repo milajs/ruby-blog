@@ -1,22 +1,35 @@
-<h1>Listing articles</h1>
+<%= stylesheet_link_tag "list" %>
 
-<%= link_to 'New article', new_article_path %>
+<div class="container">
+  <h1>All articles</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
+  <div class="button">
+    <%= link_to 'New article', new_article_path %>
+  </div>
 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+  <table>
+    <% @articles.each do |article| %>
+      <tr>
+        <td class="title"><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td>
+          <div class="navigate">
+            <%= link_to 'Show', article_path(article) %>
+          </div>
+        </td>
+        <td>
+          <div class="navigate">
+            <%= link_to 'Edit', edit_article_path(article) %>
+          </div>
+        </td>
+        <td>
+          <div class="navigate">
+            <%= link_to 'Delete', article_path(article),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
