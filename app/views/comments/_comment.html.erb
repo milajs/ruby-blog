@@ -1,11 +1,7 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
+<%= stylesheet_link_tag "show" %>
 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
+<p class="comment">
+  <%= comment.commenter %> said: <span> <%= comment.body %> </span>
 </p>
 
 <p>

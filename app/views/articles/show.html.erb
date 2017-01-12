@@ -1,18 +1,25 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<%= stylesheet_link_tag "show" %>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div class="container">
+  <h1>
+    <%= @article.title %>
+  </h1>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+  <p class="text">
+    <%= @article.text %>
+  </p>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <h3>Comments</h3>
+  <%= render @article.comments %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+  <h4>Add a comment:</h4>
+  <%= render 'comments/form' %>
+
+  <div class="button">
+    <%= link_to 'Edit', edit_article_path(@article) %>
+  </div>
+
+  <div class="button">
+    <%= link_to 'Back', articles_path %>
+  </div>
+</div>
