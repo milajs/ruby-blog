@@ -1,0 +1,24 @@
+.deviceContainer {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #673AB7;
+}
+
+.deviceContent {
+  margin-top: 0;
+  color: #fff;
+}
+
+.deviceContent h2 {
+  margin-top: 0;
+}
+
+.deviceContent input[type="email"] {
+  padding: 10px 15px;
+}

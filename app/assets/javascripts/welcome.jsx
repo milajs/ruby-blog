@@ -5,12 +5,12 @@ var Welcome = React.createClass({
      <div className="container">
        {!isSingedIn && (
          <div className="singInContainer">
-           <button className="singInBtn">Войти</button> или <button className="singInBtn">Зарегистрироваться</button>
+           <a href="/users/sign_in" onClick={this.props.logIn} className="singInBtn">Войти</a> или <a href="/users/sign_up" className="singInBtn">Зарегистрироваться</a>
          </div>
        )}
 
        {isSingedIn && (
-         <p>Добро пожаловать</p>
+         <p>Добро пожаловать, {this.props.userEmail}</p>
        )}
      </div>
    )
